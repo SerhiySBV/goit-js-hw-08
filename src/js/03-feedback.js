@@ -36,7 +36,11 @@ function saveEventInput() {
 
 function onSubmit(event) {
   event.preventDefault();
-  console.log(localStorage.getItem(KEY));
+  if (localStorage.getItem(KEY) === null) {
+    alert('Values cannot be empty');
+    return;
+  }
+  console.log(objectToLocalEL);
   formEl.reset();
   localStorage.clear();
 }
